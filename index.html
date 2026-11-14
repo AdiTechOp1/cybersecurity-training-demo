@@ -1,90 +1,176 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Phishing Awareness Lab — Local Demo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instagram • Demo</title>
 <style>
-  *{box-sizing:border-box}
-  body{margin:0;min-height:100vh;padding:24px;background:#eef2f7;color:#172033;
-       font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
-  .wrap{max-width:980px;margin:30px auto;display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  .card{background:#fff;border:1px solid #dbe2ea;border-radius:18px;padding:26px;
-        box-shadow:0 10px 28px #1720330d}
-  .warning{grid-column:1/-1;background:#fff3cd;border:1px solid #f1d58a;color:#664d03;
-           padding:13px 16px;border-radius:12px;font-weight:750;text-align:center}
-  h1{font-size:25px;margin:0 0 6px} h2{font-size:20px;margin:0 0 12px}
-  p{color:#5c6879;margin:8px 0 18px}
-  label{display:block;font-weight:650;margin:15px 0 6px}
-  input{width:100%;padding:13px;border:1px solid #bfc9d6;border-radius:9px;font:inherit}
-  button{margin-top:18px;width:100%;padding:13px;border:0;border-radius:9px;
-         background:#2457c5;color:white;font-weight:750;font-size:16px;cursor:pointer}
-  button:hover{background:#1948ad}
-  .output{min-height:150px;padding:14px;border-radius:10px;background:#f4f7fb;
-          border:1px solid #dce4ed;overflow-wrap:anywhere}
-  .line{margin:8px 0}.key{font-weight:750;color:#34445a}
-  .note{font-size:13px;margin-top:18px}
-  .empty{color:#788496}
-  @media(max-width:720px){.wrap{grid-template-columns:1fr}.warning{grid-column:auto}}
+*{box-sizing:border-box}
+body{
+ margin:0;background:#fafafa;color:#262626;
+ font-family:Arial,Helvetica,sans-serif
+}
+header{
+ height:65px;background:white;border-bottom:1px solid #ddd;
+ display:flex;align-items:center;justify-content:center
+}
+.logo{
+ font-family:Georgia,serif;font-size:30px;
+ font-weight:bold;letter-spacing:-1px
+}
+main{
+ max-width:950px;margin:55px auto;padding:15px;
+ display:grid;grid-template-columns:1fr 1fr;gap:28px
+}
+.panel{
+ background:white;border:1px solid #ddd;
+ padding:38px;border-radius:3px
+}
+.login{text-align:center}
+.login h1{
+ font-family:Georgia,serif;font-size:37px;
+ margin:8px 0 12px
+}
+.subtitle{color:#777;font-size:14px;margin-bottom:28px}
+input{
+ width:100%;height:43px;padding:12px;
+ margin:5px 0;background:#fafafa;
+ border:1px solid #ddd;border-radius:3px;
+ font-size:13px
+}
+button{
+ width:100%;height:38px;margin-top:13px;
+ background:#3897f0;color:white;
+ border:0;border-radius:5px;
+ font-weight:bold;cursor:pointer
+}
+button:hover{background:#1877d2}
+.or{
+ margin:27px 0;color:#999;font-size:12px;
+ font-weight:bold
+}
+.demo{
+ color:#999;font-size:12px;margin-top:30px
+}
+.dashboard h2{font-size:20px;margin:0 0 8px}
+.status{
+ color:#16834b;font-size:11px;
+ font-weight:bold;letter-spacing:1px
+}
+.description{font-size:13px;color:#888;margin-bottom:25px}
+.metric{
+ border:1px solid #eee;border-radius:5px;
+ padding:16px;margin:12px 0
+}
+.label{
+ font-size:10px;color:#999;
+ font-weight:bold;letter-spacing:1px;
+ margin-bottom:9px
+}
+.value{
+ font-size:14px;overflow-wrap:anywhere;
+ min-height:18px
+}
+.empty{color:#aaa}
+.activity{
+ border-top:1px solid #eee;padding-top:17px;
+ margin-top:20px;font-size:12px;
+ color:#777;line-height:1.6
+}
+footer{
+ text-align:center;color:#999;font-size:11px;
+ margin:10px auto 35px;padding:15px
+}
+@media(max-width:700px){
+ main{grid-template-columns:1fr;margin:20px auto}
+ .panel{padding:27px}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="warning">CYBERSECURITY TRAINING ONLY — FICTIONAL DEMO — DO NOT ENTER REAL PASSWORDS</div>
 
-  <section class="card">
-    <h1>ExampleSocial</h1>
-    <p>Fictional sign-in form for demonstrating phishing-awareness concepts.</p>
-    <form id="demoForm">
-      <label for="username">Demo username</label>
-      <input id="username" name="username" autocomplete="off"
-             placeholder="e.g. training_user" required>
-      <label for="password">Dummy password</label>
-      <input id="password" name="password" type="password" autocomplete="new-password"
-             placeholder="Use a made-up password" required>
-      <button type="submit">Run local demo</button>
-    </form>
-    <p class="note">This page is not affiliated with Instagram or Meta. Use invented test values only.</p>
-  </section>
+<header>
+ <div class="logo">Instagram</div>
+</header>
 
-  <section class="card">
-    <h2>Local demonstration output</h2>
-    <p>After submitting, the dummy values appear here in this browser only.</p>
-    <div class="output" id="output" aria-live="polite">
-      <span class="empty">Waiting for a demo submission…</span>
-    </div>
-    <p class="note"><strong>Privacy:</strong> Nothing is sent to GitHub, a server, or another person.
-    This page has no backend, network requests, analytics, or storage.</p>
-  </section>
-</div>
+<main>
+
+<section class="panel login">
+ <h1>Instagram</h1>
+ <p class="subtitle">Sign in to continue</p>
+
+ <form id="loginForm">
+  <input id="username" placeholder="Phone number, username, or email" required>
+  <input id="password" type="password" placeholder="Password" required>
+  <button type="submit">Log in</button>
+ </form>
+
+ <div class="or">OR</div>
+ <p class="subtitle">Forgot password?</p>
+ <p class="demo">Fictional cybersecurity demonstration</p>
+</section>
+
+<section class="panel dashboard">
+ <div class="status">● LIVE DEMO</div>
+ <h2>Activity Dashboard</h2>
+ <p class="description">Latest fictional demo submission</p>
+
+ <div class="metric">
+  <div class="label">USERNAME</div>
+  <div class="value empty" id="outUser">Waiting...</div>
+ </div>
+
+ <div class="metric">
+  <div class="label">DUMMY PASSWORD</div>
+  <div class="value empty" id="outPass">Waiting...</div>
+ </div>
+
+ <div class="metric">
+  <div class="label">SUBMISSION STATUS</div>
+  <div class="value" id="outStatus">No submission yet</div>
+ </div>
+
+ <div class="metric">
+  <div class="label">TIME</div>
+  <div class="value" id="outTime">--</div>
+ </div>
+
+ <div class="activity" id="activity">
+  Demo activity will appear here.
+ </div>
+</section>
+
+</main>
+
+<footer>
+ Independent educational demonstration.
+Not affiliated with Instagram or Meta.
+</footer>
+
 <script>
-  const form = document.getElementById('demoForm');
-  const output = document.getElementById('output');
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    // Values are displayed only in this page's current browser session.
-    // They are not transmitted or persisted.
-    const userLine = document.createElement('div');
-    userLine.className = 'line';
-    const userKey = document.createElement('span');
-    userKey.className = 'key';
-    userKey.textContent = 'Demo username: ';
-    userLine.append(userKey, document.createTextNode(username));
+const form=document.getElementById("loginForm");
 
-    const passLine = document.createElement('div');
-    passLine.className = 'line';
-    const passKey = document.createElement('span');
-    passKey.className = 'key';
-    passKey.textContent = 'Dummy password: ';
-    passLine.append(passKey, document.createTextNode(password));
+form.addEventListener("submit",function(e){
+ e.preventDefault();
 
-    const status = document.createElement('div');
-    status.className = 'line';
-    status.textContent = 'Result: displayed locally — not transmitted or saved.';
-    output.replaceChildren(userLine, passLine, status);
-  });
+ const username=document.getElementById("username").value;
+ const password=document.getElementById("password").value;
+
+ // Display fictional test values in this browser only.
+ document.getElementById("outUser").textContent=username;
+ document.getElementById("outPass").textContent="••••••••";
+ document.getElementById("outStatus").textContent="Demo submitted successfully";
+ document.getElementById("outTime").textContent=new Date().toLocaleString();
+
+ document.getElementById("outUser").classList.remove("empty");
+ document.getElementById("outPass").classList.remove("empty");
+
+ document.getElementById("activity").textContent=
+ "Latest event: fictional demo submission received locally. No credentials transmitted.";
+
+ form.reset();
+});
 </script>
+
 </body>
 </html>

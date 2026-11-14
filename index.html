@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cybersecurity Training Demo</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      padding: 24px; background: #f2f4f8; color: #182230;
+      font: 16px/1.5 system-ui, -apple-system, Segoe UI, sans-serif;
+    }
+    main {
+      width: min(100%, 440px); background: white; border: 1px solid #d9e0e8;
+      border-radius: 18px; padding: 28px; box-shadow: 0 12px 36px #18223012;
+    }
+    .banner {
+      padding: 12px 14px; border-radius: 10px; background: #fff2cc;
+      color: #654b00; font-weight: 750; font-size: 13px; text-align: center;
+      margin-bottom: 22px;
+    }
+    h1 { font-size: 25px; margin: 0 0 8px; }
+    p { color: #536273; margin: 8px 0 18px; }
+    .field {
+      display: block; width: 100%; padding: 13px; margin: 9px 0 14px;
+      border: 1px solid #bdc8d5; border-radius: 9px; background: #f8fafc;
+      color: #526071;
+    }
+    button {
+      width: 100%; padding: 13px; border: 0; border-radius: 9px;
+      background: #2457c5; color: white; font-size: 16px; font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: #1948ad; }
+    #result {
+      display: none; margin-top: 18px; padding: 15px; border-radius: 10px;
+      background: #e8f5ec; color: #15552b; border: 1px solid #b7dfc2;
+    }
+    .small { font-size: 13px; }
+    footer { margin-top: 22px; padding-top: 15px; border-top: 1px solid #e5eaf0; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="banner">CYBERSECURITY TRAINING SIMULATION — NOT A REAL LOGIN</div>
+    <h1>ExampleSocial</h1>
+    <p>This fictional page demonstrates how a login prompt can be used in a phishing-awareness lesson.</p>
+
+    <label for="demo-user"><strong>Demo username</strong></label>
+    <div id="demo-user" class="field" aria-label="Example username">training_user (illustrative only)</div>
+
+    <label for="demo-pass"><strong>Password field (not functional)</strong></label>
+    <div id="demo-pass" class="field" aria-label="Password field disabled">Disabled for this demonstration</div>
+
+    <button id="simulate" type="button">Run safe simulation</button>
+
+    <section id="result" role="status" aria-live="polite">
+      <strong>Simulation complete.</strong>
+      <p style="margin-bottom:0;color:inherit">
+        In a real phishing incident, a deceptive page may send entered credentials to an attacker.
+        This page did not ask for, read, transmit, or store any password.
+      </p>
+    </section>
+
+    <footer class="small">
+      <strong>Safety note:</strong> This is an original fictional training page, not affiliated with
+      Instagram or Meta. It has no login backend, analytics, database, or credential collection.
+    </footer>
+  </main>
+  <script>
+    document.getElementById("simulate").addEventListener("click", function () {
+      document.getElementById("result").style.display = "block";
+      this.textContent = "Simulation shown";
+      this.disabled = true;
+    });
+  </script>
+</body>
+</html>
